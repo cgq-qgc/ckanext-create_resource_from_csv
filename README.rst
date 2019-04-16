@@ -90,11 +90,9 @@ Development Installation
 To install ckanext-create_resource_from_csv for development, activate your CKAN virtualenv and
 do::
 
-    git clone https://github.com/x-malet/ckanext-create_resource_from_csv.git
+    git clone https://github.com/cgq-qgc/ckanext-create_resource_from_csv.git
     cd ckanext-create_resource_from_csv
     python setup.py develop
-    pip install -r dev-requirements.txt
-
 
 -----------------
 Running the Tests

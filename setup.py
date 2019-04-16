@@ -18,11 +18,13 @@ setup(
     # http://packaging.python.org/en/latest/tutorial.html#version
     version='0.0.1',
 
-    description='''create a resource from csv files''',
+    description='''Ce plugin permet à l'application CKAN de moissonner un répertoire contenant des fichiers CSV.
+
+Le chemin d'accès au répertoire doit être identifié à l'aide d'une variable d'environnement : METADATA_FOLDER''',
     long_description=long_description,
 
     # The project's main homepage.
-    url='https://github.com/x-malet/ckanext-create_resource_from_csv',
+    url='https://github.com/cgq-qgc/ckanext-create_resource_from_csv',
 
     # Author details
     author='''Xavier Malet''',
@@ -49,7 +51,7 @@ setup(
 
 
     # What does your project relate to?
-    keywords='''CKAN, csv, xloader, files, metadata, ISO-19115''',
+    keywords='''CKAN, csv, xloader, files, metadata, ISO-19115, ckanext-spatial''',
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
