@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # encoding: utf-8
-__name__ = "ckanext-harvest-csv-files"
 __description__= """ Ce plugin permet à l'application CKAN de moissonner un répertoire contenant des fichiers CSV.
 
 Le chemin d'accès au répertoire doit être identifié à l'aide d'une variable d'environnement : METADATA_FOLDER
