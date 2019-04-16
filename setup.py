@@ -19,12 +19,11 @@ setup(
     version='0.0.1',
 
     description='''Ce plugin permet à l'application CKAN de moissonner un répertoire contenant des fichiers CSV.
-
 Le chemin d'accès au répertoire doit être identifié à l'aide d'une variable d'environnement : METADATA_FOLDER''',
     long_description=long_description,
 
     # The project's main homepage.
-    url='https://github.com/cgq-qgc/ckanext-create_resource_from_csv',
+    url='https://github.com/cgq-qgc/ckanext-harvest-csv-files',
 
     # Author details
     author='''Xavier Malet''',
