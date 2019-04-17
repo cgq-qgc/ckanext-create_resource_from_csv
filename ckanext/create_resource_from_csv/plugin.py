@@ -1,9 +1,5 @@
 #!/usr/bin/env python
 # encoding: utf-8
-__description__ = """ Ce plugin permet à l'application CKAN de moissonner un répertoire contenant des fichiers CSV.
-
-Le chemin d'accès au répertoire doit être identifié à l'aide d'une variable d'environnement : METADATA_FOLDER
-"""
 from os import environ
 from os import listdir, path
 
@@ -36,13 +32,13 @@ def get_folder_by_index(index):
     else:
         return data_content[index]
 
-@app.route("/data")
-@app.route("/data/")
+@app.route("/data", endpoint='get_data_content')
+@app.route("/data/", endpoint='get_data_content')
 def get_data_content():
     return jsonify({'data_content': listdir(CURRENT_PATH)})
 
 
-@app.route("/data/<string:guid>")
+@app.route("/data/<string:guid>", endpoint='get_content')
 def get_content(guid):
     content = get_folder_content(guid)
     if content:
@@ -51,7 +47,7 @@ def get_content(guid):
         return 'Folder not found. Check metadata.'
 
 
-@app.route("/data/<int:index>/")
+@app.route("/data/<int:index>/",endpoint='get_index')
 def get_index(index):
     data_content = listdir(CURRENT_PATH)
     if index > len(data_content):
@@ -61,7 +57,7 @@ def get_index(index):
         return redirect_to(url_for('file_server.get_content', guid=guid))
 
 
-@app.route("/data/<string:guid>/<string:file_name>")
+@app.route("/data/<string:guid>/<string:file_name>", endpoint='get_file')
 def get_file(guid, file_name):
     folder_content = get_folder_content(guid)
     if folder_content:
@@ -71,7 +67,7 @@ def get_file(guid, file_name):
         return 'Folder not found. Check metadata.'
 
 
-@app.route("/data/<int:folder_index>/<string:file_name>")
+@app.route("/data/<int:folder_index>/<string:file_name>", endpoint='get_file_by_folder_index')
 def get_file_by_folder_index(folder_index, file_name):
     print('get_file_by_folder_index')
     guid = get_folder_by_index(folder_index)
@@ -79,7 +75,7 @@ def get_file_by_folder_index(folder_index, file_name):
         return redirect_to(url_for('file_server.get_file', guid=guid, file_name=file_name))
 
 
-@app.route("/data/<string:guid>/<int:file_index>")
+@app.route("/data/<string:guid>/<int:file_index>",endpoint='get_file_by_index_in_folder')
 def get_file_by_index_in_folder(guid, file_index):
     print('get_file_by_index_in_folder')
     folder_content = get_folder_content(guid)
