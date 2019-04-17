@@ -23,7 +23,7 @@ Le chemin d'accès au répertoire doit être identifié à l'aide d'une variable
     long_description=long_description,
 
     # The project's main homepage.
-    url='https://github.com/cgq-qgc/ckanext-harvest-csv-files',
+    url='https://github.com/cgq-qgc/ckanext-create_resource_from_csv',
 
     # Author details
     author='''Xavier Malet''',

@@ -33,7 +33,6 @@ def get_folder_by_index(index):
         return data_content[index]
 
 @app.route("/data", endpoint='get_data_content')
-@app.route("/data/", endpoint='get_data_content')
 def get_data_content():
     return jsonify({'data_content': listdir(CURRENT_PATH)})
 
